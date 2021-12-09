@@ -38,9 +38,25 @@ class Tipo_profesor:
     def __init__(self, tipo_profesor):
         self.tipo_profesor = tipo_profesor
 
+    def get_tipo_profesor(self):
+        return self.__tipo_profesor
+
+    def set_tipo_profesor(self, tipo_profesor):
+        self.__tipo_profesor = tipo_profesor
+
+    tipo_profesor = property(get_tipo_profesor, set_tipo_profesor)
+
 class Turno:
     def __init__(self, turno):
         self.turno = turno
+
+    def get_turno(self):
+        return self.__turno
+
+    def set_turno(self, turno):
+        self.__turno = turno
+
+    turno = property(get_turno, set_turno)
 
 class Matricula:
     def __init__(self, fecha_matricula, hora_matricula):
