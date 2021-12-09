@@ -102,6 +102,52 @@ class Profesor(Persona):
 
 
 class Analytics:
+    def __init__(self, media, moda,mediana, minimo,maximo):
+        self.__media = media
+        self.__moda = moda
+        self.__mediana = mediana
+        self.__minimo = minimo
+        self.__maximo = maximo
+    
+    #define setter and getter methods for Analytics attributes
+    def get_media(self):
+        return self.__media
+    def set_media(self, media):
+        self.__media = media
+
+    def get_moda(self):
+        return self.__moda
+    def set_moda(self, moda):
+        self.__moda = moda
+    
+    def get_mediana(self):
+        return self.__mediana
+    def set_mediana(self, mediana):
+        self.__mediana = mediana
+    
+    def get_minimo(self):
+        return self.__minimo
+    def set_minimo(self, minimo):
+        self.__minimo = minimo
+
+    def get_maximo(self):
+        return self.__maximo
+    def set_maximo(self, maximo):
+        self.__maximo = maximo
+
+    # Property definitions for each attribute.
+    media = property(get_media, set_media)
+    moda = property(get_moda, set_moda)
+    mediana = property(get_mediana, set_mediana)
+    minimo = property(get_minimo, set_minimo)
+    maximo = property(get_maximo, set_maximo)
+    
+
+
+
+
+
+
     pass    
 
 
