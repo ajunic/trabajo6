@@ -24,15 +24,79 @@ class Persona:
     def crear_persona(self):
         return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
 
+    # define setter and getter methods for Persona attributes
+    def get_nombre(self):
+        return self.nombre
+    
+    def set_nombre(self, nombre):
+        self.__nombre = nombre
+    
+    def get_apellido(self):
+        return self.apellido
+    
+    def set_apellido(self, apellido):
+        self.__apellido = apellido
 
+    def get_cedula(self):
+        return self.cedula
+    
+    def set_cedula(self, cedula):
+        self.__cedula = cedula
+    
+    def get_direccion(self):
+        return self.direccion
+    
+    def set_direccion(self, direccion):
+        self.__direccion = direccion
+    
+    def get_telefono(self):
+        return self.telefono
+    
+    def set_telefono(self, telefono):
+        self.__telefono = telefono
+
+    def get_email(self):
+        return self.email
+    
+    def set_email(self, email):
+        self.__email = email
+
+    def get_fecha_nacimiento(self):
+        return self.fecha_nacimiento
+    
+    def set_fecha_nacimiento(self, fecha_nacimiento):
+        self.__fecha_nacimiento = fecha_nacimiento
+
+    # Property definitions for each attribute.
+    nombre = property(get_nombre, set_nombre)
+    apellido = property(get_apellido, set_apellido)
+    cedula = property(get_cedula, set_cedula)
+    direccion = property(get_direccion, set_direccion)
+    telefono = property(get_telefono, set_telefono)
+    email = property(get_email, set_email)
+    fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
 
 class Estudiante(Persona):
     def __init__(self, id_estudiante):
         self.id_estudiante = id_estudiante
 
+    # define setter and getter methods for Estudiante attributes
+    def get_id_estudiante(self):
+        return self.__id_estudiante
+
+    def set_id_estudiante(self, id_estudiante):
+        self.__id_estudiante = id_estudiante
+
 class Profesor(Persona):
     def __init__(self, id_profesor):
         self.id_profesor = id_profesor
+
+    # define setter and getter methods for Profesor attributes
+    def get_id_profesor(self):
+        return self.__id_profesor
+
+    def set_id_profesor(self, id_profesor):
+        self.__id_profesor = id_profesor
 
 
 
