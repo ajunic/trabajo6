@@ -34,46 +34,7 @@ class Profesor(Persona):
     def __init__(self, id_profesor):
         self.id_profesor = id_profesor
 
-class Tipo_profesor:
-    def __init__(self, tipo_profesor):
-        self.tipo_profesor = tipo_profesor
 
-class Turno:
-    def __init__(self, turno):
-        self.turno = turno
-
-class Matricula:
-    def __init__(self, fecha_matricula, hora_matricula):
-        self.fecha_matricula = fecha_matricula
-        self.hora_matricula = hora_matricula
-
-class Curso:
-    def __init__(self,  nombre_curso, creditos, horas_semanales, programa,nota):
-        self.nota = nota #agregada para punto 7
-        self.nombre_curso = nombre_curso
-        self.creditos = creditos
-        self.horas_semanales = horas_semanales
-        self.programa = programa
-class Edificio:
-    def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):
-        self.nombre_edificio = nombre_edificio
-        self.direccion = direccion
-        self.cantidad_pisos = cantidad_pisos
-        self.cantidad_aulas = cantidad_aulas
-
-class Aula:
-    def __init__(self, nombre_aula, numero_piso, numero_edificio, capacidad_asientos):
-        self.nombre_aula = nombre_aula
-        self.numero_piso = numero_piso
-        self.numero_edificio = numero_edificio
-        self.capacidad_asientos = capacidad_asientos
-
-class Programa:
-    def __init__(self, nombre, fecha_creacion, status_programa, director):
-        self.nombre = nombre
-        self.fecha_creacion = fecha_creacion
-        self.status_programa = status_programa
-        self.director = director
 
 
 class Analytics:
