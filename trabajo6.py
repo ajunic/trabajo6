@@ -13,56 +13,56 @@ operacionalización de propiedades)."""
 
 class Persona:
     def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.cedula = cedula
-        self.direccion = direccion
-        self.telefono = telefono
-        self.email = email
-        self.fecha_nacimiento = fecha_nacimiento
+        self.__nombre = nombre
+        self.__apellido = apellido
+        self.__cedula = cedula
+        self.__direccion = direccion
+        self.__telefono = telefono
+        self.__email = email
+        self.__fecha_nacimiento = fecha_nacimiento
     
     def crear_persona(self):
         return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
 
     # define setter and getter methods for Persona attributes
     def get_nombre(self):
-        return self.nombre
+        return self.__nombre
     
     def set_nombre(self, nombre):
         self.__nombre = nombre
     
     def get_apellido(self):
-        return self.apellido
+        return self.__apellido
     
     def set_apellido(self, apellido):
         self.__apellido = apellido
 
     def get_cedula(self):
-        return self.cedula
+        return self.__cedula
     
     def set_cedula(self, cedula):
         self.__cedula = cedula
     
     def get_direccion(self):
-        return self.direccion
+        return self.__direccion
     
     def set_direccion(self, direccion):
         self.__direccion = direccion
     
     def get_telefono(self):
-        return self.telefono
+        return self.__telefono
     
     def set_telefono(self, telefono):
         self.__telefono = telefono
 
     def get_email(self):
-        return self.email
+        return self.__email
     
     def set_email(self, email):
         self.__email = email
 
     def get_fecha_nacimiento(self):
-        return self.fecha_nacimiento
+        return self.__fecha_nacimiento
     
     def set_fecha_nacimiento(self, fecha_nacimiento):
         self.__fecha_nacimiento = fecha_nacimiento
@@ -78,7 +78,7 @@ class Persona:
 
 class Estudiante(Persona):
     def __init__(self, id_estudiante):
-        self.id_estudiante = id_estudiante
+        self.__id_estudiante = id_estudiante
 
     # define setter and getter methods for Estudiante attributes
     def get_id_estudiante(self):
@@ -89,7 +89,7 @@ class Estudiante(Persona):
 
 class Profesor(Persona):
     def __init__(self, id_profesor):
-        self.id_profesor = id_profesor
+        self.__id_profesor = id_profesor
 
     # define setter and getter methods for Profesor attributes
     def get_id_profesor(self):
