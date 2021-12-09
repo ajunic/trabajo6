@@ -89,17 +89,71 @@ class Estudiante(Persona):
 
 class Profesor(Persona):
     def __init__(self, id_profesor):
+
         self.__id_profesor = id_profesor
 
     # define setter and getter methods for Profesor attributes
     def get_id_profesor(self):
         return self.__id_profesor
-
     def set_id_profesor(self, id_profesor):
         self.__id_profesor = id_profesor
 
+class Tipo_profesor:
+    def __init__(self, tipo_profesor):
+        self.tipo_profesor = tipo_profesor
 
+    def get_tipo_profesor(self):
+        return self.__tipo_profesor
 
+    def set_tipo_profesor(self, tipo_profesor):
+        self.__tipo_profesor = tipo_profesor
+
+    tipo_profesor = property(get_tipo_profesor, set_tipo_profesor)
+
+class Turno:
+    def __init__(self, turno):
+        self.turno = turno
+
+    def get_turno(self):
+        return self.__turno
+
+    def set_turno(self, turno):
+        self.__turno = turno
+
+    turno = property(get_turno, set_turno)
+
+class Matricula:
+    def __init__(self, fecha_matricula, hora_matricula):
+        self.fecha_matricula = fecha_matricula
+        self.hora_matricula = hora_matricula
+
+class Curso:
+    def __init__(self,  nombre_curso, creditos, horas_semanales, programa,nota):
+        self.nota = nota #agregada para punto 7
+        self.nombre_curso = nombre_curso
+        self.creditos = creditos
+        self.horas_semanales = horas_semanales
+        self.programa = programa
+class Edificio:
+    def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):
+        self.nombre_edificio = nombre_edificio
+        self.direccion = direccion
+        self.cantidad_pisos = cantidad_pisos
+        self.cantidad_aulas = cantidad_aulas
+
+class Aula:
+    def __init__(self, nombre_aula, numero_piso, numero_edificio, capacidad_asientos):
+        self.nombre_aula = nombre_aula
+        self.numero_piso = numero_piso
+        self.numero_edificio = numero_edificio
+        self.capacidad_asientos = capacidad_asientos
+
+class Programa:
+    def __init__(self, nombre, fecha_creacion, status_programa, director):
+        self.nombre = nombre
+        self.fecha_creacion = fecha_creacion
+        self.status_programa = status_programa
+        self.director = director
 
 class Analytics:
     def __init__(self, media, moda,mediana, minimo,maximo):
