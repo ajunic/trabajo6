@@ -11,7 +11,7 @@ en base a lo aprendido en las sesiones de Object-oriented programming – OOP (E
 Class Factory y el uso del decorador @property para la implementación y/o 
 operacionalización de propiedades)."""
 
-class Persona:
+class Persona:#superclase
     def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
         self.__nombre = nombre
         self.__apellido = apellido
@@ -75,6 +75,16 @@ class Persona:
     telefono = property(get_telefono, set_telefono)
     email = property(get_email, set_email)
     fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
+
+    def display(self):
+        print("""nombre:{0} - apellido:{1} - cedula:{2} - direccion:{3} -
+                telefono:{4} - email:{5} - fecha_nacimiento:{6}""".format(self.__nombre,
+                                                                self.__apellido,
+                                                                self.__cedula,
+                                                                self.__direccion,
+                                                                self.__telefono,
+                                                                self.__email,
+                                                                self.__fecha_nacimiento))
 
 class Estudiante(Persona):
     def __init__(self, id_estudiante):
