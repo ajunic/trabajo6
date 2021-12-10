@@ -1,3 +1,5 @@
+
+
 """La Universidad de Oxford ubicada en inglaterra lo ha contratado a usted para que 
 desarrolle un sistema de control academico estudiantil, para tal tarea se cuenta con la 
 siguiente información"""
@@ -11,6 +13,7 @@ en base a lo aprendido en las sesiones de Object-oriented programming – OOP (E
 Class Factory y el uso del decorador @property para la implementación y/o 
 operacionalización de propiedades)."""
 
+from matricula import *
 class Persona:
     def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
         self.__nombre = nombre
@@ -20,6 +23,7 @@ class Persona:
         self.__telefono = telefono
         self.__email = email
         self.__fecha_nacimiento = fecha_nacimiento
+        print("Se ha creado una persona")
     
     def crear_persona(self):
         return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
@@ -77,8 +81,12 @@ class Persona:
     fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
 
 class Estudiante(Persona):
-    def __init__(self, id_estudiante):
+    def __init__(self, id_estudiante, ):
         self.__id_estudiante = id_estudiante
+        print("Se ha ingresado un nuevo estudiante")
+
+    
+    
 
     # define setter and getter methods for Estudiante attributes
     def get_id_estudiante(self):
@@ -108,7 +116,12 @@ class Analytics:
         self.__mediana = mediana
         self.__minimo = minimo
         self.__maximo = maximo
-    
+    def __del__(self):
+        """Return values of Analytics attributes"""
+        print("Se ha eliminado la clase Analytics")
+        return self.__media, self.__moda, self.__mediana, self.__minimo, self.__maximo
+
+
     #define setter and getter methods for Analytics attributes
     def get_media(self):
         return self.__media
@@ -141,7 +154,7 @@ class Analytics:
     mediana = property(get_mediana, set_mediana)
     minimo = property(get_minimo, set_minimo)
     maximo = property(get_maximo, set_maximo)
-    
+
 
 
 

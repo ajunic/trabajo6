@@ -1,9 +1,18 @@
+from curso import Curso
+
+
 class Programa:
-    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director):
+    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director, curso=[]):
         self.__nombre_programa = nombre_programa
         self.__fecha_creacion_programa = fecha_creacion_programa
         self.__status_programa = status_programa
         self.__director = director
+        self.__curso=curso #agregacion
+
+
+    def agregar_curso(self, curso):
+        self.__curso.append(curso)
+    
 
     #Definir setter y getter
     def get_nombre_programa(self):
@@ -35,3 +44,12 @@ class Programa:
     fecha_creacion_programa = property(get_fecha_creacion_programa, set_fecha_creacion_programa)
     status_programa = property(get_status_programa, set_status_programa)
     director = property(get_director, set_director)
+
+
+ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", ["Calculo2", "fisica"])
+ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan")
+cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
+
+print(ing1.director)
+
+print(ing2.__dict__)

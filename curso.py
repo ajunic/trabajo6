@@ -1,14 +1,16 @@
 class Curso:
+        
     def __init__(self, nombre_curso, creditos, horas_semanales, programa, nota):
+
+               
         self.__nota = nota #agregada para punto 7
         self.__nombre_curso = nombre_curso
         self.__creditos = creditos
         self.__horas_semanales = horas_semanales
         self.__programa = programa
+        
 
-    def administrar_Curso(): #Devolvera None
-        pass
-
+    
     # define setter and getter methods
     def get_nombre_curso(self):
         return self.__nombre_curso
@@ -46,3 +48,13 @@ class Curso:
     horas_semanales = property(get_horas_semanales, set_horas_semanales)
     programa = property(get_programa, set_programa)
     nota = property(get_nota, set_nota)
+
+    
+  
+
+    def show(self):
+        print ("Nombre del curso: ", self.nombre_curso)
+
+    def administrar_Curso(): #Devolvera None
+        pass
+
