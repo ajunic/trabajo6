@@ -5,6 +5,10 @@ siguiente información"""
 #Author: Armando Jose Ugarte
 #Rodolfo Melendez
 #Michael Gomez.
+#Guillermo Gómez.
+#Francisco Blandino.
+#Manuel Cáceres.
+#Ashly Ramos.
 
 """Programar la siguiente jerarquia de clases, con su correspondiente prueba de ejecución
 en base a lo aprendido en las sesiones de Object-oriented programming – OOP (Esto es 
@@ -90,16 +94,27 @@ class Estudiante(Persona):
     def __init__(self, id_estudiante):
         self.__id_estudiante = id_estudiante
 
+    def matricular():
+        pass
+        
+    def total_a_pagar():
+        pass
+        
     # define setter and getter methods for Estudiante attributes
     def get_id_estudiante(self):
         return self.__id_estudiante
 
     def set_id_estudiante(self, id_estudiante):
         self.__id_estudiante = id_estudiante
-
+    
+    
 class Profesor(Persona):
+    
     def __init__(self, id_profesor):
         self.__id_profesor = id_profesor
+    
+    def crear_profesor():
+        pass
 
     # define setter and getter methods for Profesor attributes
     def get_id_profesor(self):
