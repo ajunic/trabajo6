@@ -12,6 +12,9 @@ class Curso:
     def __str__(self):
         return "Nombre del curso: " + self.__nombre_curso + " Creditos: " + str(self.__creditos) + " Horas semanales: " + str(self.__horas_semanales) + " Programa: " + self.__programa + " Nota: " + str(self.__nota)
     
+    def registrar_curso():
+        pass
+    
     # define setter and getter methods
     def get_nombre_curso(self):
         return self.__nombre_curso

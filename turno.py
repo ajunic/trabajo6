@@ -1,6 +1,9 @@
+
 class Turno:
     def __init__(self, turno):
-        self.turno = turno
+        self.__turno = turno
+        
+
 
     def get_turno(self):
         return self.__turno

@@ -1,18 +1,35 @@
 from curso import *
 from programa import *
-
+from Profesor import *
 
 #Programa principal
 """Autores:-    
-    -Juan David Arias
-    -Juan David Lopez
-    -Juan David Paredes
-    -Juan David Ramirez
-    -Juan David Sanchez
-    -Juan David Torres
-
+    -Rodolfo Melendez
+    -Ashly Ramos
+    -Guillermo Carvajal
+    -Michael Gomez
+    -Rodolfo Melendes
+    -Blandino
+    -Armando Ugarte
 
 """
+
+def salto_linea():
+    print ("\n")
+    print("|****************************|")
+    print("|**|      siguiente       |**|")
+    print("|**|         Menu         |**|")
+    print("|****************************|")
+    print ("\n")   
+
+
+print("\n")
+print("|****************************|")
+print("|**|      Bienvenidos     |**|")
+print("|**|         Menu         |**|")
+print("|****************************|")
+print("") 
+
 print("Bienvenido al sistema mas mamalon de este curso de python avanzado")
 print("Por favor ingrese los datos solicitados")
 print("Siga las indicaciones para que el programa funcione correctamente")
@@ -32,6 +49,7 @@ while digito<=3:
     
     #submenu de sercivios docente
     if digito==1:
+
         numero=0
         numero=int(input("Ingrese el numero de servicios que desea verificar: "))
         print("Bienvenido a Servicios Docente")
@@ -45,13 +63,16 @@ while digito<=3:
 
             if numero==1:
                 print("\t Registro de Docente")
+                Profesor.registrar_docente()
             elif numero==2:
                 print("\t Mostrar cursos a cargo de docente")
+                
             elif numero==3:
                 break
 
     
-    
+        salto_linea()
+
     #submenu de servicios estudiante
     elif digito==2:
         numero=0
@@ -86,6 +107,8 @@ while digito<=3:
 
             elif numero==3:
                 break
+    
+        salto_linea()        
     #submenu de servicios administrativos        
     elif digito==3:
         numero=0
@@ -135,7 +158,7 @@ while digito<=3:
                 print("\t ADMINISTRAR CATALOGOS")
                 while (numero <= 2):
                         print("\t MENU")
-                        print("1. Curos")
+                        print("1. Cursos")
                         print("2. Aulas")
                         print("3. Tipos de profesores")
                         print('4. Edificio')
@@ -152,7 +175,7 @@ while digito<=3:
             elif numero == 4:
                 break
 
-
+        salto_linea()        
     elif digito==4:
         
         print("Gracias por usar nuestro sistema")
@@ -161,30 +184,7 @@ while digito<=3:
 
 #_______________________________________________________________________________
 
-    
-
-
-#Archivo madre para probar clases.
-
-programa1=Curso("Curso de Python",5,20,"Informatica",90)
-programa2=Curso("Curso de Java",5,20,"Informatica",99)
-programa3=Curso("Curso de C#",5,20,"Informatica",100)
-programa4=Curso("Curso de C++",5,20,"Informatica",80)
-
-informatica=Programa("Ing Software",5,20,"Ing Jose")
-ingcivil=Programa("Ing Civil",5,20,"Ing Jose")
-ingelectrica=Programa("Ing Electrica",5,20,"Ing Jose")
-
-
-informatica.agregar_curso(programa1)
-informatica.agregar_curso(programa2)
-
-informatica.mostrar_curso()
-informatica.limitar_curso()
-
-print(informatica.__dict__)
-
-
+ 
 
 
 

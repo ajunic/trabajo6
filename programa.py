@@ -9,6 +9,9 @@ class Programa:
         self.__director = director
         self.__curso=[] #agregacion
 
+    def registrar_programa():
+        print("Se registro el programa")
+        pass
 
     def __str__(self):
         return self.__curso

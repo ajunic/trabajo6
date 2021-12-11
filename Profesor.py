@@ -1,9 +1,9 @@
 from datetime import date
 
-from Aula import Aula
-from Curso import Curso
+from aula import Aula
+from curso import Curso
 from Persona import Persona
-from Programa import Programa
+from programa import Programa
 
 
 class Profesor(Persona):
@@ -26,6 +26,32 @@ class Profesor(Persona):
         #Curso: {self.obj_curso}]
         {super().__str__()}
         """
+
+    def registrar_docente():
+        print("Registro de Docente")
+        nombre = input("Ingrese el nombre del docente: ")
+        apellido = input("Ingrese el apellido del docente: ")
+        cedula = input("Ingrese la cedula del docente: ")
+        direccion = input("Ingrese la direccion del docente: ")
+        telefono = input("Ingrese el telefono del docente: ")
+        fecha_nacimiento = input("Ingrese la fecha de nacimiento del docente: ")
+        email = input("Ingrese el email del docente: ")
+        codigo_profesor = input("Ingrese el codigo del docente: ")
+        obj_programa = Programa.registrar_programa()
+        obj_curso = Curso.registrar_curso()
+        obj_profesor = Profesor("Docente", nombre, apellido, cedula, direccion, telefono, fecha_nacimiento,email,codigo_profesor,obj_curso,obj_programa)
+        Profesor.listaProfesor.append(obj_profesor)
+
+    def mostrar_docente():
+        for i in Profesor.listaProfesor:
+            print(i)
+
+
+
+
+
+
+        
     # define setter and getter methods for Estudiante attributes
     def get_codigo_profesor(self):
         return self.__codigo_profesor
