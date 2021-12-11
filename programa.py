@@ -1,35 +1,36 @@
-from Curso import Curso
+from curso import Curso
 
 
 class Programa:
-    contador_programas = 0
-
-    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director, cursos):
-        Programa.contador_programas +=1
-        self.__id_programa = Programa.contador_programas
+    def __init__(self,  nombre_programa, fecha_creacion_programa, status_programa, director, curso=[]):
         self.__nombre_programa = nombre_programa
         self.__fecha_creacion_programa = fecha_creacion_programa
         self.__status_programa = status_programa
         self.__director = director
-        self.__cursos=list(cursos) #agregacion
+        self.__curso=[] #agregacion
 
+
+    def __str__(self):
+        return self.__curso
 
     def agregar_curso(self, curso):
-        self.__cursos.append(curso)
-    
-    """def calcular_total(self):
-        total = 0
-        for curso in self._cursos:
-            total += curso.nota
-        return total"""
-    
-    """def __str__(self):
-        cursos_str = ''
-        for curso in self._cursos:
-            cursos_str += curso.__str__() + '|'
+        self.__curso.append(curso.nombre_curso)
 
-        return f'Orden: {self._id_programa}, \nProductos: {cursos_str}'"""
-   
+    def quitar_curso(self, curso):
+        self.__curso.remove(curso)
+
+       
+    def mostrar_curso(self):
+        for curso in self.__curso:
+            print(curso)
+        return self.__curso
+
+    def limitar_curso(self):
+        if len(self.__curso) < 3:
+            print("El programa tiene mas de 3 cursos")
+        else:
+            print("El programa tiene menos de 3 cursos")
+    
 
     #Definir setter y getter
     def get_nombre_programa(self):
@@ -62,11 +63,11 @@ class Programa:
     status_programa = property(get_status_programa, set_status_programa)
     director = property(get_director, set_director)
 
+
+ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", ["Calculo2", "fisica"])
+ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan")
 cur1=Curso("Calculo4", 5, 20,"Ingenieria civil",90)
-ing1 =Programa("ingenieria_Civil", "12/12/12", "activo", "Juan", cur1)
-ing2= Programa("Arquitectura", "12/15/16", "activo", "Juan", ["Calculo3", "fisica2"] )
 
+print(ing1.director)
 
-print(ing1.__cursos)
-
-print(ing2.nombre_programa)
+print(ing2.__dict__)

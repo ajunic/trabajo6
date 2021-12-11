@@ -1,9 +1,36 @@
+from  aula import *
 class Edificio:
+    
     def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):
         self.__nombre_edificio = nombre_edificio
         self.__direccion = direccion
         self.__cantidad_pisos = cantidad_pisos
         self.__cantidad_aulas = cantidad_aulas
+        self.__aulas = Aula() #relacion de composicion
+
+        def agregar_aula():
+            self.__aulas.append(Aula())
+
+        def eliminar_aula():
+            self.__aulas.pop()
+
+        def buscar_aula():
+            self.__aulas.index(Aula())
+
+    
+        def modificar_aula():
+            self.__aulas.remove(Aula())
+    
+        def listar_aulas():
+            return self.__aulas
+            
+    
+        def administrar_Edificio():
+            pass #queda a criterio ,return NONE
+                       
+   
+
+
 
     #Defining Getters and Setters
     def get_nombre_edificio(self):
