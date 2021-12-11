@@ -9,7 +9,8 @@ class Curso:
         self.__horas_semanales = horas_semanales
         self.__programa = programa
         
-
+    def __str__(self):
+        return "Nombre del curso: " + self.__nombre_curso + " Creditos: " + str(self.__creditos) + " Horas semanales: " + str(self.__horas_semanales) + " Programa: " + self.__programa + " Nota: " + str(self.__nota)
     
     # define setter and getter methods
     def get_nombre_curso(self):
@@ -57,4 +58,12 @@ class Curso:
 
     def administrar_Curso(): #Devolvera None
         pass
+
+
+
+
+
+
+
+
 

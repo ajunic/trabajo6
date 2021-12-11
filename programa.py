@@ -7,11 +7,29 @@ class Programa:
         self.__fecha_creacion_programa = fecha_creacion_programa
         self.__status_programa = status_programa
         self.__director = director
-        self.__curso=curso #agregacion
+        self.__curso=[] #agregacion
 
+
+    def __str__(self):
+        return self.__curso
 
     def agregar_curso(self, curso):
-        self.__curso.append(curso)
+        self.__curso.append(curso.nombre_curso)
+
+    def quitar_curso(self, curso):
+        self.__curso.remove(curso)
+
+       
+    def mostrar_curso(self):
+        for curso in self.__curso:
+            print(curso)
+        return self.__curso
+
+    def limitar_curso(self):
+        if len(self.__curso) < 3:
+            print("El programa tiene mas de 3 cursos")
+        else:
+            print("El programa tiene menos de 3 cursos")
     
 
     #Definir setter y getter

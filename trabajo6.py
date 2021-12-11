@@ -14,6 +14,9 @@ Class Factory y el uso del decorador @property para la implementación y/o
 operacionalización de propiedades)."""
 
 from matricula import *
+def exportacion_csv():
+    """Exporta la matricula en formato csv"""
+    print("Exportando a csv")
 class Persona:
     def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
         self.__nombre = nombre
@@ -24,7 +27,18 @@ class Persona:
         self.__email = email
         self.__fecha_nacimiento = fecha_nacimiento
         print("Se ha creado una persona")
+
+    def __str__(self):
+        return "Nombre: {}\nApellido: {}\nCedula: {}\nDireccion: {}\nTelefono: {}\nEmail: {}\nFecha de Nacimiento: {}".format(self.__nombre, self.__apellido, self.__cedula, self.__direccion, self.__telefono, self.__email, self.__fecha_nacimiento)
+
+    def comprobar_carga(self):
+        """Comprueba si la persona tiene asignacion de trabajo o clase fuera de los limites"""
+        pass
+      
     
+    def __del__(self):
+        exportacion_csv()
+        
     def crear_persona(self):
         return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
 

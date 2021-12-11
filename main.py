@@ -31,7 +31,25 @@ while digito<=3:
     digito=int(input("Ingrese un numero: "))
 
     if digito==1:
+        numero=0
         print("Bienvenido a Servicios Docente")
+        #Menu de docente.
+        while (numero<=3):
+            print("\t MENU")
+            print("1. Registrar como docente:")
+            print("2. Mostrar cursos a cargo de docente:")
+            print("3. Salir")
+
+            if numero==1:
+                print("\t Registro de Docente")
+            if numero==2:
+                print("\t Mostrar cursos a cargo de docente")
+            if numero==3:
+                break
+
+    
+    
+    
     if digito==2:
         print("Bienvenido a Servicios Estudiantiles")
     if digito==3:
