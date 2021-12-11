@@ -5,13 +5,17 @@ siguiente información"""
 #Author: Armando Jose Ugarte
 #Rodolfo Melendez
 #Michael Gomez.
+#Guillermo Gómez.
+#Francisco Blandino.
+#Manuel Cáceres.
+#Ashly Ramos.
 
 """Programar la siguiente jerarquia de clases, con su correspondiente prueba de ejecución
 en base a lo aprendido en las sesiones de Object-oriented programming – OOP (Esto es 
 Class Factory y el uso del decorador @property para la implementación y/o 
 operacionalización de propiedades)."""
 
-class Persona:
+class Persona:#superclase
     def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
         self.__nombre = nombre
         self.__apellido = apellido
@@ -76,21 +80,42 @@ class Persona:
     email = property(get_email, set_email)
     fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
 
+    def display(self):
+        print("""nombre:{0} - apellido:{1} - cedula:{2} - direccion:{3} -
+                telefono:{4} - email:{5} - fecha_nacimiento:{6}""".format(self.__nombre,
+                                                                self.__apellido,
+                                                                self.__cedula,
+                                                                self.__direccion,
+                                                                self.__telefono,
+                                                                self.__email,
+                                                                self.__fecha_nacimiento))
+
 class Estudiante(Persona):
     def __init__(self, id_estudiante):
         self.__id_estudiante = id_estudiante
 
+    def matricular():
+        pass
+        
+    def total_a_pagar():
+        pass
+        
     # define setter and getter methods for Estudiante attributes
     def get_id_estudiante(self):
         return self.__id_estudiante
 
     def set_id_estudiante(self, id_estudiante):
         self.__id_estudiante = id_estudiante
-
+    
+    
 class Profesor(Persona):
+    
     def __init__(self, id_profesor):
 
         self.__id_profesor = id_profesor
+    
+    def crear_profesor():
+        pass
 
     # define setter and getter methods for Profesor attributes
     def get_id_profesor(self):
