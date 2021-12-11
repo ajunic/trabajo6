@@ -24,7 +24,7 @@ digito=int(input("Ingrese un numero: "))
 
 #menu de 4 opciones y sus subramas
 while digito<=3:
-    print(" 1 Verificacion Docente:")
+    print("1 Verificacion Docente:")
     print("2 Confirmacion Estudiante:")
     print("3 Administracion:")
     print("4 Salir")
@@ -37,7 +37,7 @@ while digito<=3:
         #Menu de docente.
         while (numero<=3):
             print("\t MENU")
-            print("1. Registrar como docente:")
+            print("1. Ingresar como docente:")
             print("2. Mostrar cursos a cargo de docente:")
             print("3. Salir")
 
@@ -87,7 +87,8 @@ while digito<=3:
             print("\t MENU")
             print("1. Administrar Profesores:")
             print("2. Administrar Estudiantes:")
-            print("3. Salir")
+            print('3. Administrar Catalogos:')
+            print("4. Salir")
 
             if numero==1:
                 print("\t ADMINISTRAR PROFESORES")
@@ -120,6 +121,23 @@ while digito<=3:
                             break
 
             elif numero==3:
+                print("\t ADMINISTRAR CATALOGOS")
+                while (numero <= 2):
+                        print("\t MENU")
+                        print("1. Curos")
+                        print("2. Aulas")
+                        print("3. Tipos de profesores")
+                        print('4. Edificio')
+                        print('5. Turno')
+
+                        if numero==1:
+                            pass #metodo para mostrar profesores
+                        elif numero==2:
+                            pass #delete profesores
+                        elif numero==3:
+                            break
+
+            elif numero == 4:
                 break
 
 
