@@ -16,60 +16,72 @@ Class Factory y el uso del decorador @property para la implementación y/o
 operacionalización de propiedades)."""
 
 class Persona:#superclase
-    def __init__(self, nombre, apellido, cedula, direccion, telefono, email,fecha_nacimiento):
+    contador_personas = 0
+    listaPersona = []
+
+    def __init__(self, tipo, nombre, apellido, cedula, direccion, telefono, fecha_nacimiento, email):
+        Persona.contador_personas += 1
+        self.__tipo = tipo
         self.__nombre = nombre
         self.__apellido = apellido
         self.__cedula = cedula
         self.__direccion = direccion
         self.__telefono = telefono
-        self.__email = email
         self.__fecha_nacimiento = fecha_nacimiento
+        self.__email = email
+        self.id_persona = Persona.contador_personas
     
-    def crear_persona(self):
-        return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
+    #def crear_persona(self):
+    #    return Persona(self.nombre, self.apellido, self.cedula, self.direccion, self.telefono, self.email, self.fecha_nacimiento)
 
-    # define setter and getter methods for Persona attributes
+    # define setter and getter methods for nombre
     def get_nombre(self):
         return self.__nombre
     
     def set_nombre(self, nombre):
         self.__nombre = nombre
-    
+
+    # define setter and getter methods for apellido
     def get_apellido(self):
         return self.__apellido
     
     def set_apellido(self, apellido):
         self.__apellido = apellido
 
+    # define setter and getter methods for cedula
     def get_cedula(self):
         return self.__cedula
     
     def set_cedula(self, cedula):
         self.__cedula = cedula
-    
+
+    # define setter and getter methods for direccion
     def get_direccion(self):
         return self.__direccion
     
     def set_direccion(self, direccion):
         self.__direccion = direccion
-    
+
+    # define setter and getter methods for telefono
     def get_telefono(self):
         return self.__telefono
     
     def set_telefono(self, telefono):
         self.__telefono = telefono
 
+    # define setter and getter methods for fecha_nacimiento
+    def get_fecha_nacimiento(self):
+        return self.__fecha_nacimiento
+
+    def set_fecha_nacimiento(self, fecha_nacimiento):
+        self.__fecha_nacimiento = fecha_nacimiento
+
+    # define setter and getter methods for email
     def get_email(self):
         return self.__email
     
     def set_email(self, email):
         self.__email = email
-
-    def get_fecha_nacimiento(self):
-        return self.__fecha_nacimiento
-    
-    def set_fecha_nacimiento(self, fecha_nacimiento):
-        self.__fecha_nacimiento = fecha_nacimiento
 
     # Property definitions for each attribute.
     nombre = property(get_nombre, set_nombre)
@@ -77,61 +89,34 @@ class Persona:#superclase
     cedula = property(get_cedula, set_cedula)
     direccion = property(get_direccion, set_direccion)
     telefono = property(get_telefono, set_telefono)
-    email = property(get_email, set_email)
     fecha_nacimiento = property(get_fecha_nacimiento, set_fecha_nacimiento)
+    email = property(get_email, set_email)
 
     def display(self):
         print("""nombre:{0} - apellido:{1} - cedula:{2} - direccion:{3} -
-                telefono:{4} - email:{5} - fecha_nacimiento:{6}""".format(self.__nombre,
+                telefono:{4} - fecha_nacimiento:{5} - email:{6} """.format(self.__nombre,
                                                                 self.__apellido,
                                                                 self.__cedula,
                                                                 self.__direccion,
                                                                 self.__telefono,
-                                                                self.__email,
-                                                                self.__fecha_nacimiento))
+                                                                self.__fecha_nacimiento,
+                                                                self.__email))
 
-class Estudiante(Persona):
-    def __init__(self, id_estudiante):
-        self.__id_estudiante = id_estudiante
+    def mostrar_detalle(self):
+        print(f'Persona: {self.__tipo} {self.__nombre} {self.__apellido} {self.__cedula}'
+              f'{self.__direccion}{self.__telefono} {self.__fecha_nacimiento} {self.__email}')
 
-    def matricular():
-        pass
-        
-    def total_a_pagar():
-        pass
-        
-    # define setter and getter methods for Estudiante attributes
-    def get_id_estudiante(self):
-        return self.__id_estudiante
+    def __str__(self):
+        return f"""\nPersona:[{self.id_persona}
+        Nombre: {self.nombre} 
+        Apellido: {self.apellido}
+        Cedula: {self.cedula}
+        Direccion: {self.direccion}
+        Telefono: {self.telefono}
+        Fecha de Nacimiento: {self.fecha_nacimiento}
+        Email: {self.email}]
+        """
 
-    def set_id_estudiante(self, id_estudiante):
-        self.__id_estudiante = id_estudiante
-    
-    
-class Profesor(Persona):
-    
-    def __init__(self, id_profesor):
-        self.__id_profesor = id_profesor
-    
-    def crear_profesor():
-        pass
-
-    # define setter and getter methods for Profesor attributes
-    def get_id_profesor(self):
-        return self.__id_profesor
-
-    def set_id_profesor(self, id_profesor):
-        self.__id_profesor = id_profesor
-
-
-
-
-class Analytics:
-    pass    
-
-
-       
-
-
-    
-
+    def __del__(self):
+        print(f'Persona: {self.__tipo} {self.__nombre} {self.__apellido} {self.__cedula}'
+              f'{self.__direccion} {self.__telefono} {self.__fecha_nacimiento} {self.__email}')
