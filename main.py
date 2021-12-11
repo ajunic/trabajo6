@@ -26,10 +26,11 @@ digito=int(input("Ingrese un numero: "))
 while digito<=3:
     print(" 1 Verificacion Docente:")
     print("2 Confirmacion Estudiante:")
-    print("3 Informe Administrativo:")
+    print("3 Administracion:")
     print("4 Salir")
     digito=int(input("Ingrese un numero: "))
-
+    
+    #submenu de sercivios docente
     if digito==1:
         numero=0
         print("Bienvenido a Servicios Docente")
@@ -42,19 +43,87 @@ while digito<=3:
 
             if numero==1:
                 print("\t Registro de Docente")
-            if numero==2:
+            elif numero==2:
                 print("\t Mostrar cursos a cargo de docente")
-            if numero==3:
+            elif numero==3:
                 break
 
     
     
-    
-    if digito==2:
+    #submenu de servicios estudiante
+    elif digito==2:
         print("Bienvenido a Servicios Estudiantiles")
-    if digito==3:
+        while (numero<=3):
+            print("\t MENU")
+            print("1. Matricularse:")
+            print("2. Mostrar cursos :")
+            print("3. Salir")
+            #Submenu de matricula
+            if numero==1:
+                print("\t MATRICULA")
+                while (numero<=2):
+                    print("\t MENU")
+                    print("1. Pagar:")
+                    print("2. Mostrar informacion cursos:")
+                    print("3. Salir")
+
+                    if numero==1:
+                        pass #metdo para pagar
+                    elif numero==2:
+                        pass #metodo para mostrar informacion cursos
+                    elif numero==3:
+                        break
+
+            elif numero==2:
+                print("\t TUS CURSOS:")
+                pass #metodo para mostrar cursos
+
+            elif numero==3:
+                break
+    #submenu de servicios administrativos        
+    elif digito==3:
         print("Bienvenido a Servicios Administrativos")
-    if digito==4:
+        while (numero<=3):
+            print("\t MENU")
+            print("1. Administrar Profesores:")
+            print("2. Administrar Estudiantes:")
+            print("3. Salir")
+
+            if numero==1:
+                print("\t ADMINISTRAR PROFESORES")
+                while (numero<=2):
+                    print("\t MENU")
+                    print("1.MOSTRAR PROFESORES:")
+                    print("2.ELIMINAR PROFESORES:")
+                    print("3. SALIR")
+
+                    if numero==1:
+                        pass #metodo para mostrar profesores
+                    elif numero==2:
+                        pass #delete profesores
+                    elif numero==3:
+                        break
+
+            elif numero==2:
+                print("\t ADMINISTRAR ESTUDIANTES")
+                while (numero<=2):
+                        print("\t MENU")
+                        print("1.MOSTRAR ESTUDIANTES:")
+                        print("2.ELIMINAR ESTUDIANTES:")
+                        print("3. SALIR")
+
+                        if numero==1:
+                            pass #metodo para mostrar profesores
+                        elif numero==2:
+                            pass #delete profesores
+                        elif numero==3:
+                            break
+
+            elif numero==3:
+                break
+
+
+    elif digito==4:
         print("Gracias por usar nuestro sistema")
         break
 
