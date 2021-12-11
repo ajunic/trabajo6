@@ -29,7 +29,7 @@ while digito<=3:
     print("4 Salir")
     digito=int(input("Ingrese un numero: "))
     
-    #submenu de sercivios docente
+    #submenu de servicios docente
     if digito==1:
         numero=0
         print("Bienvenido a Servicios Docente")
@@ -124,7 +124,7 @@ while digito<=3:
                 print("\t ADMINISTRAR CATALOGOS")
                 while (numero <= 2):
                         print("\t MENU")
-                        print("1. Curos")
+                        print("1. Cursos")
                         print("2. Aulas")
                         print("3. Tipos de profesores")
                         print('4. Edificio')
