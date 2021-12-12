@@ -1,4 +1,4 @@
-from curso import Curso
+from Curso import Curso
 
 
 class Programa:

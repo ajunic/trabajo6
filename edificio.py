@@ -1,4 +1,4 @@
-from  aula import *
+from  Aula import *
 class Edificio:
     
     def __init__(self, nombre_edificio, direccion, cantidad_pisos, cantidad_aulas):

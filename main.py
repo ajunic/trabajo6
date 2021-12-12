@@ -1,5 +1,5 @@
-from curso import *
-from programa import *
+from Curso import *
+from Programa import *
 
 
 #Programa principal

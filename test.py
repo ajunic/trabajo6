@@ -1,14 +1,22 @@
-from datetime import date
+class Student:
 
-from Persona import Persona
-from Estudiante import Estudiante
+    def __init__(self, id):
+        self._id = id
+
+    def registration_number(self, department_id) -> str:
+        return str(self._id) + '-' + department_id
 
 
-persona1 = Persona(1, 'Rodolfo', 'Melendez', '001-000000-000x', 'Managua',
-        '7777-8888', (1998, 11, 27), 'alejandro@gmail.com')
+class Department:
 
-estudiante1 = Estudiante(1,'Rodolfo', 'Melendez', '001-000000-000x', 'Managua',
-        '7777-8888',(1998, 11, 27),'melendez@gmail.com', 234, 98)
+    def __init__(self, id, student):
+        self._id = id
+        self._student = student
 
-print(persona1)
-print(estudiante1)
+    def student_registration(self):
+        return self._student.registration_number(self._id)
+
+
+if __name__ == '__main__':
+    student = Student(10)
+    department = Department('ENG', student)

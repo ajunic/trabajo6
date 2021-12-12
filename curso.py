@@ -1,37 +1,55 @@
-class Curso:
-        
-    def __init__(self, nombre_curso, creditos, horas_semanales, programa, nota):
+from Aula import *
 
-               
-        self.__nota = nota #agregada para punto 7
+class Curso:
+
+    contador_curso = 0
+    __lista_curso = []
+
+
+    def __init__(self, nombre_curso, creditos, 
+        horas_semanales, programa, aulas):
+        Curso.contador_curso += 1   
         self.__nombre_curso = nombre_curso
         self.__creditos = creditos
         self.__horas_semanales = horas_semanales
         self.__programa = programa
+        self.__aulas = list(aulas)
+        self.__id_curso = Curso.contador_curso
         
     def __str__(self):
-        return "Nombre del curso: " + self.__nombre_curso + " Creditos: " + str(self.__creditos) + " Horas semanales: " + str(self.__horas_semanales) + " Programa: " + self.__programa + " Nota: " + str(self.__nota)
+        return f"""\nCurso[
+        Id: {self.__id_curso}
+        Nombre del curso: {self.__nombre_curso} 
+        Creditos: " {self.__creditos}
+        Horas semanales: " {self.__horas_semanales}
+        Programa: " + {self.__programa}
+        Nota: " {self.__nota}]"""
     
-    # define setter and getter methods
+    def __del__(self):
+        print(f"""Curso: {self.__nombre_curso} {self.__creditos} {self.__horas_semanales}""")
+    
+    # define setter and getter nombre_curso
     def get_nombre_curso(self):
         return self.__nombre_curso
 
     def set_nombre_curso(self, nombre_curso):
         self.__nombre_curso = nombre_curso
 
+    # define setter and getter creditos
     def get_creditos(self):
         return self.__creditos
 
     def set_creditos(self, creditos):
         self.__creditos = creditos
 
+    # define setter and getter horas_semanales
     def get_horas_semanales(self):
         return self.__horas_semanales
 
     def set_horas_semanales(self, horas_semanales):
         self.__horas_semanales = horas_semanales
 
-    def get_programa(self):
+    """def get_programa(self):
         return self.__programa
 
     def set_programa(self, programa):
@@ -41,29 +59,33 @@ class Curso:
         return self.__nota
 
     def set_nota(self, nota):
-        self.__nota = nota
+        self.__nota = nota"""
     
     # Property definitions for each attribute.
     nombre_curso = property(get_nombre_curso, set_nombre_curso)
     creditos = property(get_creditos, set_creditos)
     horas_semanales = property(get_horas_semanales, set_horas_semanales)
-    programa = property(get_programa, set_programa)
-    nota = property(get_nota, set_nota)
-
-    
-  
+    #programa = property(get_programa, set_programa)
+    #nota = property(get_nota, set_nota)
 
     def show(self):
         print ("Nombre del curso: ", self.nombre_curso)
 
-    def administrar_Curso(): #Devolvera None
-        pass
+    #Agregar aula de manera independiente a la orden
+    def agregar_aula(self, aula): #Devolvera None
+        self.__aulas.append(aula)
 
-
-
-
-
-
-
-
-
+    #Ver curso con sus aulas
+    def __str__(self) -> str:
+        aulas_str = ''
+        for aula in self.__aulas:
+            aulas_str += aula.__str__() + '|'
+        return f"Curso: {self.__id_curso}, Aulas: {aulas_str}"
+    
+    #Crear curso
+    def crear_curso(cls):
+        nombre_curso = input("Ingrese nombre de la materia: ")
+        creditos = input("Ingrese nombre de la materia: ")
+        horas_semanales = input("Ingrese nombre de la materia: ")
+        curso = Curso(nombre_curso=nombre_curso, creditos=creditos, horas_semanales= horas_semanales, aulas='')
+        return curso
